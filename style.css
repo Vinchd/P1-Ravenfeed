@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    background-color: #e2e2e2;
+
+}
+
+header {
+    background-color: green;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    text-align: center;
+}
+
+nav {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    background-color: yellow;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+li {
+    display: flex;
+
+}
