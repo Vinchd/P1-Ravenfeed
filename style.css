@@ -6,15 +6,38 @@
 
 }
 
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
     display: flex;
     background-color: #e2e2e2;
     font-family: 'montserrat';
+}
+
+/*Titre du header */
+header h1 {
+    color: white;
+    font-size: 2rem;
+}
+
+/* Media query pour les écrans de moins de 600px */
+@media screen and (max-width: 600px) {
+   header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    background-color: #9D3852;
+    padding: 20px;
+    width: 100%;
+   }
+   /* Image du header */
+   header img {
+    max-width: 48px;
+    margin-right: 20px;
+   }
+  }  
+
+/* Toute les balises */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
