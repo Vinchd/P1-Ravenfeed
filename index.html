@@ -2,15 +2,60 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ravenclaw Social Media</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <main>
+        <section class="new-post">
+            <div class="say-something">Say something...</div>
+            <div class="new-message">
+                <textarea placeholder="Ecrivez votre message"></textarea>
+                <button id="post">Post</button>
+            </div>
+        </section>
 
+        <section class="tweet">
+            <div class="tweet-header">
+                <!-- <div class="profile"> -->
+                <div class="profile">
+                    <img src="https://placekitten.com/200/300" alt="" class="profile-pic" />
+                    <p class="profile-name">John Snow</p>
+                </div>
+                <!-- </div> -->
+                <div class="date">📅 15/03/23</div>
+            </div>
+
+            <div class="tweet-body">
+                <div class="message">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                        elementum accumsan velit ac accumsan. Ut fermentum magna justo, eget
+                        dictum purus lobortis sed.
+                    </p>
+                </div>
+                <div class="tweet-actions">
+                    <div class="icones">
+                        <div class="likes">
+                            <p class="compteur-likes">👍 136</p>
+                        </div>
+                        <div class="comments">
+                            <p class="compteur-comments">💬 120</p>
+                        </div>
+                        <div class="shares">
+                            <p class="compteur-shares">🔁 12</p>
+                        </div>
+                    </div>
+                    <button class="reply-button">Reply</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 
 </html>
