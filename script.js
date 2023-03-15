@@ -1,26 +1,29 @@
 const saySomething = document.querySelector(".say-something");
 const newMessage = document.querySelector(".new-message");
-const postButton = document.querySelector("#post");
+const form = document.querySelector(".new-tweet-form");
+const textarea = document.querySelector(".tweet-message");
+
 
 saySomething.addEventListener("click", function (event) {
   saySomething.style.display = "none";
   newMessage.style.display = "flex";
 });
 
-postButton.addEventListener("click", function (event) {
+form.onsubmit = function (event) {
+  event.preventDefault();
   saySomething.style.display = "flex";
   newMessage.style.display = "none";
 
-  // Test de tweet aléatoire sur le bouton "Post"
+  // indice : valeur entre 0 et 2
   let indice = Math.floor(Math.random() * 3);
 
   createTweet(
     persons[indice].name,
     persons[indice].picture,
-    persons[indice].message
-  );
-  // Fin test
-});
+    textarea.value);
+
+  textarea.value = "";
+};
 
 const persons = [
   {
@@ -129,5 +132,3 @@ function createTweet(nameF, pictureF, newTweetContent) {
   replyButton.innerHTML = "Reply";
   tweetActions.appendChild(replyButton);
 }
-
-
