@@ -10,15 +10,16 @@
 </head>
 
 <body>
-    <main>
-        <div class="new-post">
-            <div class="say-something">Say something...</div>
-            <div class="new-message">
-                <textarea placeholder="Ecrivez votre message"></textarea>
-                <button id="post">Post</button>
-            </div>
+    <div class="new-post">
+        <div class="say-something">Say something...</div>
+        <div class="new-message">
+            <form class="new-tweet-form">
+                <textarea class="tweet-message" name="tweet-message" placeholder="Ecrivez votre message"></textarea>
+                <button type="submit" id="post">Post</button>
+            </form>
         </div>
-
+    </div>
+    <main>
         <div class="tweet">
             <div class="tweet-header">
                 <!-- <div class="profile"> -->
@@ -34,17 +35,17 @@
                 <div class="message">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                        elementum accumsan velit ac accumsan. Ut fermentum magna justo, eget
-                        dictum purus lobortis sed.
+                        elementum accumsan velit ac accumsan. Ut fermentum magna justo,
+                        eget dictum purus lobortis sed.
                     </p>
                 </div>
                 <div class="tweet-actions">
                     <div class="icones">
                         <div class="likes">
-                            <p class="compteur-likes">👍 136</p>
+                            <p class="compteur-likes">👍 136&nbsp;&nbsp;</p>
                         </div>
                         <div class="comments">
-                            <p class="compteur-comments">💬 120</p>
+                            <p class="compteur-comments">💬 120&nbsp;&nbsp;</p>
                         </div>
                         <div class="shares">
                             <p class="compteur-shares">🔁 12</p>

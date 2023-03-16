@@ -20,7 +20,7 @@ body {
 
 main {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 :root {
@@ -102,6 +102,7 @@ main {
   border-radius: 12px;
 }
 .icones {
+  cursor: pointer;
   height: 1.5rem;
   display: flex;
   justify-content: space-around;
@@ -147,7 +148,13 @@ main {
   color: var(--saySomething-color);
   cursor: pointer;
 }
-
+.new-tweet-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
 .new-message {
   display: none;
   width: 100%;
