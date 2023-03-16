@@ -171,7 +171,6 @@
             <li class="messages"><a href="#">
                     <span class="icon">
                         <ion-icon name="chatbubbles-outline"></ion-icon>
-                        <!-- <img src="assets/icons/chatbubbles-outline.svg" alt="test" width="16px"> -->
                     </span>
                     <span class="text">
                         Messages
@@ -191,10 +190,15 @@
         <a href="#">Paramètres</a>
         <a href="#">test3</a>
         <a href="#">test4</a>
-        <div class="buttons">
-            <p>Theme</p>
-            <button class="dark-button dark"></button>
-            <button class="color"></button>
+        <div class="dark-theme">
+            <!-- <p class="light-toggle">Dark Theme</p> -->
+            <label class="light-toggle" for="toggle-theme">Dark<br>Theme</label>
+            <button class="dark-button dark" name="toggle-theme" id="toggle-theme"></button>
+        </div>
+        <div class="color-theme">
+            <!-- <p>Dark Theme</p> -->
+            <label for="color">Couleur<br>Primaire</label>
+            <input type="color" value="#9D3852" name="color" id="color">
         </div>
     </div>
 

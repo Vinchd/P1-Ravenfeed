@@ -127,21 +127,49 @@ span {
 
 .menu a {
     color: var(--light-text);
-    display: block;
+    display: flex;
     text-decoration: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
-.menu button {
-    height: 25px;
-    width: 25px;
+.menu div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+.menu p {
+    width: auto;
+    text-align: center;
+}
+
+.menu label {
+    width: auto;
+    text-align: center;
+}
+
+.menu button,
+.menu input {
+    height: 24px;
+    width: 24px;
     border: none;
     border-radius: 5px;
-
+    cursor: pointer;
 }
 
 .dark {
     background-color: rgb(53, 53, 53);
     color: white;
+}
+
+nav,
+.menu {
+    font-size: 3vw;
 }
 
 @media screen and (min-width: 600px) {
@@ -162,5 +190,10 @@ span {
 
     .menu {
         display: none;
+    }
+
+    nav,
+    .menu {
+        font-size: 1rem;
     }
 }
