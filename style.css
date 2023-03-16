@@ -12,6 +12,7 @@ body {
     font-family: 'montserrat';
 }
 
+/* Header deskop */
 header {
     display: flex;
     flex-direction: row-reverse;
@@ -30,27 +31,6 @@ header h1 {
     color: white;
     font-size: 2rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Media query pour les écrans de moins de 600px */
 @media screen and (max-width: 600px) {
