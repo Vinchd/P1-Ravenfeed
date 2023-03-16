@@ -29,6 +29,7 @@ nav {
     position: fixed;
     bottom: 0;
     background-color: var(--primary-color);
+    z-index: 10;
 }
 
 ul {
@@ -40,7 +41,7 @@ ul {
 }
 
 li,
-a {
+li a {
     text-decoration: none;
     color: var(--light-text);
     height: 100%;
@@ -52,13 +53,6 @@ a {
     margin: auto;
 }
 
-/* li {
-    display: flex;
-    width: 100%;
-    height: 100%;
-
-} */
-
 .icon {
     font-size: 2rem;
 }
@@ -68,10 +62,93 @@ span {
     text-align: center;
 }
 
+.nav-toggler {
+    /* z-index: 10; */
+    height: 100%;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.line {
+    position: absolute;
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--light-text);
+    transition: all 0.3s ease-out;
+
+}
+
+.l1 {
+    transform: translateY(-10px);
+}
+
+.l3 {
+    transform: translateY(10px);
+}
+
+.nav-toggler.active .l1 {
+    transform: translateY(0px) rotate(135deg);
+}
+
+.nav-toggler.active .l2 {
+    opacity: 0;
+}
+
+.nav-toggler.active .l3 {
+    transform: translateY(0px) rotate(-135deg);
+}
+
+.menu {
+    color: var(--light-text);
+    position: fixed;
+    bottom: 80px;
+    right: 0;
+    width: 25%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background: var(--primary-color);
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+    border-radius: 0.5em 0 0 0;
+}
+
+.menu.active {
+    transform: translate(0);
+}
+
+.menu a {
+    color: var(--light-text);
+    display: block;
+    text-decoration: none;
+}
+
+.menu button {
+    height: 25px;
+    width: 25px;
+    border: none;
+    border-radius: 5px;
+
+}
+
+.dark {
+    background-color: rgb(53, 53, 53);
+    color: white;
+}
+
 @media screen and (min-width: 600px) {
     nav {
         height: 100%;
-        width: auto;
+        width: 10%;
+        min-width: 90px;
     }
 
     ul {
@@ -79,5 +156,11 @@ span {
         height: 80%;
     }
 
+    .menu-button {
+        display: none;
+    }
 
+    .menu {
+        display: none;
+    }
 }
