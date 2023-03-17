@@ -26,7 +26,9 @@ dark.addEventListener("click", function () {  /* insérer balise ici pour darkth
 
 themeColor.addEventListener("input", function (event) { /* insérer balise ici pour changement couleur */
     const resultNav = document.querySelector("nav");
-    const resultMenu = document.querySelector(".menu")
+    const resultMenu = document.querySelector(".menu");
+    const header = document.querySelector("header");
     resultNav.style.backgroundColor = event.target.value;
     resultMenu.style.backgroundColor = event.target.value;
+    header.style.backgroundColor = event.target.value;
 })

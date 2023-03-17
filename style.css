@@ -31,18 +31,20 @@ header {
     background-color: #9D3852;
     padding: 20px;
     width: 100%;
-   }
+    position: fixed;
+    top: 0;
+}
 
-   header h1 {
+header h1 {
     color: white;
     font-size: 2rem;
 }
 
-   /* Image du header */
-   header img {
+/* Image du header */
+header img {
     max-width: 48px;
     margin-right: 20px;
-   }
+}
 
 nav {
     width: 100%;
@@ -193,25 +195,27 @@ nav,
 }
 
 @media screen and (min-width: 600px) {
-/* Header deskop */
-header {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    background-color: #9D3852;
-    padding: 20px;
-    width: 100%;
-}
 
-header img {
-    max-width: 48px;
-    margin-right: 80px;
-   }
+    /* Header deskop */
+    header {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        background-color: #9D3852;
+        padding: 20px;
+        width: 100%;
+    }
 
-header h1 {
-    color: white;
-    font-size: 2rem;
-}
+    header img {
+        max-width: 48px;
+        margin-right: 80px;
+    }
+
+    header h1 {
+        color: white;
+        font-size: 2rem;
+    }
+
     nav {
         height: 100%;
         width: 10%;
