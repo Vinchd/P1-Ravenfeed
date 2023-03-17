@@ -256,12 +256,9 @@ li a {
 }
 
 .icon {
-    font-size: 2rem;
-}
-
-span {
     display: block;
     text-align: center;
+    fill: var(--light-text);
 }
 
 .nav-toggler {
@@ -344,6 +341,17 @@ span {
     align-items: center;
     height: 100%;
 }
+
+/* .menu a:hover,
+.menu div:hover,
+li a:hover,
+.nav-toggler:hover {
+    box-shadow: 5px 5px 10px #802d42, -5px -5px 10px #bb4361;
+    width: 92%;
+    height: 100%;
+    border-radius: 15px;
+    margin-top: 5px;
+} */
 
 .menu p {
     width: auto;
