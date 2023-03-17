@@ -10,6 +10,10 @@
 </head>
 
 <body>
+<header>
+        <H1>RavenFeed</H1>
+        <img src="assets/ravenLogo.png" class="logo" alt="Logo du site" />
+    </header>
     <div class="new-post">
         <div class="say-something">Say something...</div>
         <div class="new-message">
@@ -56,6 +60,60 @@
             </div>
         </div>
     </main>
+    <nav>
+        <ul>
+            <li class="profil"><a href="#">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="text">
+                        profil
+                    </span>
+                </a></li>
+            <li class="search"><a href="#">
+                    <span class="icon">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </span>
+                    <span class="text">
+                        Recherche
+                    </span>
+                </a></li>
+            <li class="messages"><a href="#">
+                    <span class="icon">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </span>
+                    <span class="text">
+                        Messages
+                    </span>
+                </a></li>
+            <li class="menu-button">
+                <button type="button" class="nav-toggler">
+                    <span class="line l1"></span>
+                    <span class="line l2"></span>
+                    <span class="line l3"></span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+    <div class="menu">
+        <a href="#">Tendances</a>
+        <a href="#">Paramètres</a>
+        <a href="#">test3</a>
+        <a href="#">test4</a>
+        <div class="dark-theme">
+            <!-- <p class="light-toggle">Dark Theme</p> -->
+            <label class="light-toggle" for="toggle-theme">Dark<br>Theme</label>
+            <button class="dark-button dark" name="toggle-theme" id="toggle-theme"></button>
+        </div>
+        <div class="color-theme">
+            <!-- <p>Dark Theme</p> -->
+            <label for="color">Couleur<br>Primaire</label>
+            <input type="color" value="#9D3852" name="color" id="color">
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
 </body>
 
