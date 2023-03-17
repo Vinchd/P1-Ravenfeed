@@ -169,7 +169,7 @@ span {
 
 nav,
 .menu {
-    font-size: 3vw;
+    font-size: 3.5vw;
 }
 
 @media screen and (min-width: 600px) {

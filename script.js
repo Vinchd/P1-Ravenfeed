@@ -24,7 +24,7 @@ dark.addEventListener("click", function () {  /* insérer balise ici pour darkth
     }
 })
 
-themeColor.addEventListener("input", function (event) {
+themeColor.addEventListener("input", function (event) { /* insérer balise ici pour changement couleur */
     const resultNav = document.querySelector("nav");
     const resultMenu = document.querySelector(".menu")
     resultNav.style.backgroundColor = event.target.value;
