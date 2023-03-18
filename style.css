@@ -30,14 +30,16 @@ body {
 main {
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
 }
 
 .tweet {
     display: flex;
-    margin: 0rem 1rem 1rem;
+    margin: 0rem 0rem 1rem 0rem;
     background-color: var(--secondary-color);
     border-radius: 12px;
     padding: 0.5rem;
+    width: 95%;
 }
 
 .tweet-header {
@@ -86,7 +88,6 @@ main {
     display: flex;
     width: 100%;
     flex-direction: column;
-    margin: 0;
 }
 
 .message {
@@ -97,6 +98,7 @@ main {
     margin: 0.5rem;
     font-size: small;
     overflow: auto;
+    color: black;
 }
 
 .tweet-actions {
@@ -120,7 +122,7 @@ main {
 .icones p {
     display: inline-block;
     font-size: small;
-    margin-left: 0.5;
+    margin-left: 0.5rem;
 }
 
 .reply-button {
@@ -137,9 +139,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
+    margin-bottom: 1rem;
     margin-top: 7rem;
-    width: auto;
+    width: 100%;
 }
 
 .say-something {
@@ -149,7 +151,7 @@ main {
     align-items: center;
     background-color: var(--secondary-color);
     height: 2rem;
-    width: 100%;
+    width: 95%;
     border-radius: 12px;
     font-weight: bold;
     font-style: italic;
@@ -167,7 +169,7 @@ main {
 
 .new-message {
     display: none;
-    width: 100%;
+    width: 95%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -232,6 +234,7 @@ nav {
     bottom: 0;
     background-color: var(--primary-color);
     z-index: 10;
+    color: var(--light-text);
 }
 
 ul {
@@ -363,8 +366,7 @@ li a:hover,
     text-align: center;
 }
 
-.menu button,
-.menu input {
+.theme-button {
     height: 24px;
     width: 24px;
     border: none;
@@ -387,6 +389,36 @@ nav,
     font-size: 3.5vw;
 }
 
+.icon-description {
+    display: none;
+}
+
+.profil-section {
+    display: none;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 102%;
+    height: 102%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: content-box;
+
+}
+
+.my-profil {
+    z-index: 24;
+    background-color: var(--primary-color);
+    position: fixed;
+    height: 80%;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 @media screen and (min-width: 600px) {
 
     /* Header deskop */
@@ -394,9 +426,10 @@ nav,
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
-        background-color: #9D3852;
+        background-color: var(--primary-color);
         padding: 20px;
         width: 100%;
+        height: 10%;
     }
 
     header img {
@@ -410,14 +443,36 @@ nav,
     }
 
     nav {
-        height: 100%;
-        width: 10%;
+        position: fixed;
+        left: 0;
+        height: 90%;
+        width: 15%;
         min-width: 90px;
+        max-width: 185px;
+
     }
 
     ul {
         flex-direction: column;
-        height: 80%;
+        height: 100%;
+    }
+
+    nav ul * {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--light-text);
+        text-align: center;
+    }
+
+
+    nav div {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     .menu-button {
@@ -432,4 +487,17 @@ nav,
     .menu {
         font-size: 1rem;
     }
+
+    main {
+        width: 70%;
+        margin: auto;
+    }
+
+    .new-post {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
 }

@@ -72,7 +72,7 @@ form.onsubmit = function (event) {
     createTweet(
         persons[indice].name,
         persons[indice].picture,
-        //persons[indice].message
+        // persons[indice].message,
         textarea.value
     );
     countLikes = document.querySelectorAll(".compteur-likes");
@@ -114,6 +114,9 @@ function createTweet(nameF, pictureF, newTweetContent) {
     const tweet = document.createElement("div");
     tweet.classList.add("tweet");
     tweets.appendChild(tweet);
+    if (!dark.classList.contains("dark")) {
+        tweet.classList.add("dark-tweet")
+    }
 
     const tweetHeader = document.createElement("div");
     tweetHeader.classList.add("tweet-header");
@@ -149,6 +152,7 @@ function createTweet(nameF, pictureF, newTweetContent) {
 
     const content = document.createElement("p");
     content.innerHTML = newTweetContent;
+    content.style.color = "black"
     message.appendChild(content);
 
     const tweetActions = document.createElement("div");
@@ -256,3 +260,41 @@ themeColor.addEventListener("input", function (event) { /* insérer balise ici p
     // header.style.backgroundColor = event.target.value;
     document.documentElement.style.setProperty('--primary-color', event.target.value);
 })
+
+
+let screenWidth = window.innerWidth;
+const nav = document.querySelector("ul");
+const darkBox = document.querySelector(".dark-theme");
+const colorBox = document.querySelector(".color-theme");
+const tendances = document.querySelector(".tendances");
+const parametres = document.querySelector(".parametres");
+
+
+if (this.window.innerWidth > 600) {
+    nav.appendChild(tendances);
+    nav.appendChild(darkBox);
+    nav.appendChild(colorBox);
+    nav.appendChild(parametres);
+} else {
+    menu.appendChild(tendances);
+    menu.appendChild(parametres);
+    menu.appendChild(darkBox);
+    menu.appendChild(colorBox);
+
+}
+
+window.addEventListener("resize", function () {
+    if (this.window.innerWidth > 600) {
+        nav.appendChild(tendances);
+        nav.appendChild(darkBox);
+        nav.appendChild(colorBox);
+        nav.appendChild(parametres);
+    } else {
+        menu.appendChild(tendances);
+        menu.appendChild(parametres);
+        menu.appendChild(darkBox);
+        menu.appendChild(colorBox);
+
+    }
+})
+
