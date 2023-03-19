@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ravenclaw Social Media</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <H1>RavenFeed</H1>
+        <img src="assets/ravenLogo.png" class="logo" alt="Logo du site" />
+    </header>
+    <div class="new-post">
+        <div class="say-something">Say something...</div>
+        <div class="new-message">
+            <form class="new-tweet-form">
+                <textarea class="tweet-message" name="tweet-message" placeholder="Ecrivez votre message"></textarea>
+                <button type="submit" id="post">Post</button>
+            </form>
+        </div>
+    </div>
+    <main>
+        <div class="tweet">
+            <div class="tweet-header">
+                <!-- <div class="profile"> -->
+                <div class="profile">
+                    <img src="https://placekitten.com/200/300" alt="" class="profile-pic" />
+                    <p class="profile-name">John Snow</p>
+                </div>
+                <!-- </div> -->
+                <div class="date">📅 15/03/23</div>
+            </div>
+
+            <div class="tweet-body">
+                <div class="message">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                        elementum accumsan velit ac accumsan. Ut fermentum magna justo,
+                        eget dictum purus lobortis sed.
+                    </p>
+                </div>
+                <div class="tweet-actions">
+                    <div class="icones">
+                        <div class="likes">
+                            <p class="compteur-likes">👍 136&nbsp;&nbsp;</p>
+                        </div>
+                        <div class="comments">
+                            <p class="compteur-comments">💬 120&nbsp;&nbsp;</p>
+                        </div>
+                        <div class="shares">
+                            <p class="compteur-shares">🔁 12</p>
+                        </div>
+                    </div>
+                    <button class="reply-button">Reply</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <nav>
+        <ul>
+            <li class="profil"><a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="32px" viewBox="0 0 512 512">
+                        <title>Person</title>
+                        <path
+                            d="M332.64 64.58C313.18 43.57 286 32 256 32c-30.16 0-57.43 11.5-76.8 32.38-19.58 21.11-29.12 49.8-26.88 80.78C156.76 206.28 203.27 256 256 256s99.16-49.71 103.67-110.82c2.27-30.7-7.33-59.33-27.03-80.6zM432 480H80a31 31 0 01-24.2-11.13c-6.5-7.77-9.12-18.38-7.18-29.11C57.06 392.94 83.4 353.61 124.8 326c36.78-24.51 83.37-38 131.2-38s94.42 13.5 131.2 38c41.4 27.6 67.74 66.93 76.18 113.75 1.94 10.73-.68 21.34-7.18 29.11A31 31 0 01432 480z" />
+                    </svg>
+                </a></li>
+            <li class="search"><a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="32px" viewBox="0 0 512 512">
+                        <title>Search</title>
+                        <path
+                            d="M456.69 421.39L362.6 327.3a173.81 173.81 0 0034.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 00327.3 362.6l94.09 94.09a25 25 0 0035.3-35.3zM97.92 222.72a124.8 124.8 0 11124.8 124.8 124.95 124.95 0 01-124.8-124.8z" />
+                    </svg>
+                </a></li>
+            <li class="messages"><a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="32px" viewBox="0 0 512 512">
+                        <title>Chatbubbles</title>
+                        <path
+                            d="M60.44 389.17c0 .07 0 .2-.08.38.03-.12.05-.25.08-.38zM439.9 405.6a26.77 26.77 0 01-9.59-2l-56.78-20.13-.42-.17a9.88 9.88 0 00-3.91-.76 10.32 10.32 0 00-3.62.66c-1.38.52-13.81 5.19-26.85 8.77-7.07 1.94-31.68 8.27-51.43 8.27-50.48 0-97.68-19.4-132.89-54.63A183.38 183.38 0 01100.3 215.1a175.9 175.9 0 014.06-37.58c8.79-40.62 32.07-77.57 65.55-104A194.76 194.76 0 01290.3 32c52.21 0 100.86 20 137 56.18 34.16 34.27 52.88 79.33 52.73 126.87a177.86 177.86 0 01-30.3 99.15l-.19.28-.74 1c-.17.23-.34.45-.5.68l-.15.27a21.63 21.63 0 00-1.08 2.09l15.74 55.94a26.42 26.42 0 011.12 7.11 24 24 0 01-24.03 24.03z" />
+                        <path
+                            d="M299.87 425.39a15.74 15.74 0 00-10.29-8.1c-5.78-1.53-12.52-1.27-17.67-1.65a201.78 201.78 0 01-128.82-58.75A199.21 199.21 0 0186.4 244.16C85 234.42 85 232 85 232a16 16 0 00-28-10.58s-7.88 8.58-11.6 17.19a162.09 162.09 0 0011 150.06C59 393 59 395 58.42 399.5c-2.73 14.11-7.51 39-10 51.91a24 24 0 008 22.92l.46.39A24.34 24.34 0 0072 480a23.42 23.42 0 009-1.79l53.51-20.65a8.05 8.05 0 015.72 0c21.07 7.84 43 12 63.78 12a176 176 0 0074.91-16.66c5.46-2.56 14-5.34 19-11.12a15 15 0 001.95-16.39z" />
+                    </svg>
+                </a></li>
+            <li class="menu-button">
+                <button type="button" class="nav-toggler">
+                    <span class="line l1"></span>
+                    <span class="line l2"></span>
+                    <span class="line l3"></span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+    <div class="menu">
+        <a href="#">Tendances</a>
+        <a href="#">Paramètres</a>
+        <a href="#">test3</a>
+        <a href="#">test4</a>
+        <div class="dark-theme">
+            <!-- <p class="light-toggle">Dark Theme</p> -->
+            <label class="light-toggle" for="toggle-theme">Dark<br>Theme</label>
+            <button class="dark-button dark" name="toggle-theme" id="toggle-theme"></button>
+        </div>
+        <div class="color-theme">
+            <!-- <p>Dark Theme</p> -->
+            <label for="color">Couleur<br>Primaire</label>
+            <input type="color" value="#9D3852" name="color" id="color">
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
