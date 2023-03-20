@@ -6,11 +6,11 @@
 }
 
 :root {
-  --primary-color: #9d3852;
-  --light-text: #f5f5f5;
-  --secondary-color: #d0d1d6;
-  --light: #ffffff;
-  --saySomething-color: #535353;
+    --primary-color: #9d3852;
+    --light-text: #f5f5f5;
+    --secondary-color: #d0d1d6;
+    --light: #ffffff;
+    --saySomething-color: #535353;
 }
 
 /* Toute les balises */
@@ -277,12 +277,12 @@ li a {
 }
 
 .line {
-  position: absolute;
-  display: block;
-  width: 32px;
-  height: 2px;
-  background: var(--light-text);
-  transition: all 0.3s ease-out;
+    position: absolute;
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--light-text);
+    transition: all 0.3s ease-out;
 }
 
 .l1 {
