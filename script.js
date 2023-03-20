@@ -245,50 +245,85 @@ function createTweet(nameF, pictureF, newTweetContent) {
 /* ----------------------------------- */
 
 hamburgerButton.addEventListener("click", function () {
-  hamburgerButton.classList.toggle("active");
-  menu.classList.toggle("active");
-});
+    hamburgerButton.classList.toggle("active");
+    menu.classList.toggle("active");
+})
 
-dark.addEventListener("click", function () {
-  /* insérer balise ici pour darktheme */ const toggle =
-    document.querySelector("body");
-  const changeP = document.querySelector(".dark-theme label");
-  const boxMessage = document.querySelectorAll(".message");
-  const boxTweet = document.querySelectorAll(".tweet");
-  toggle.classList.toggle("dark");
-  dark.classList.toggle("dark");
-  // boxMessage.classList.toggle("dark");
-  // boxTweet.style.backgroundColor = "#6b6b6b";
-  // saySomething.style.backgroundColor = "#6b6b6b";
-  // saySomething.style.color = "white"
-  // newMessage.style.backgroundColor = "#6b6b6b";
-  textarea.classList.toggle("dark");
-  saySomething.classList.toggle("dark-tweet");
-  newMessage.classList.toggle("dark-tweet");
+dark.addEventListener("click", function () {  /* insérer balise ici pour darktheme */
+    const toggle = document.querySelector("body");
+    const changeP = document.querySelector(".dark-theme label");
+    const boxMessage = document.querySelectorAll(".message");
+    const boxTweet = document.querySelectorAll(".tweet");
+    toggle.classList.toggle("dark");
+    dark.classList.toggle("dark");
+    // boxMessage.classList.toggle("dark");
+    // boxTweet.style.backgroundColor = "#6b6b6b";
+    // saySomething.style.backgroundColor = "#6b6b6b";
+    // saySomething.style.color = "white"
+    // newMessage.style.backgroundColor = "#6b6b6b";
+    textarea.classList.toggle("dark")
+    saySomething.classList.toggle("dark-tweet");
+    newMessage.classList.toggle("dark-tweet")
 
-  for (let i = 0; i < boxTweet.length; i++) {
-    boxTweet[i].classList.toggle("dark-tweet");
-    console.log(boxTweet[i]);
-  }
+    for (let i = 0; i < boxTweet.length; i++) {
+        boxTweet[i].classList.toggle("dark-tweet");
+        console.log(boxTweet[i])
 
-  changeP.classList.toggle("dark-toggle");
-  changeP.classList.toggle("light-toggle");
-  if (changeP.classList.contains("dark-toggle")) {
-    changeP.innerHTML = "Light<br>Theme";
-  } else if (changeP.classList.contains("light-toggle")) {
-    changeP.innerHTML = "Dark<br>Theme";
-  }
-});
+    }
 
-themeColor.addEventListener("input", function (event) {
-  /* insérer balise ici pour changement couleur */ // const resultNav = document.querySelector("nav");
-  // const resultMenu = document.querySelector(".menu");
-  // const header = document.querySelector("header");
-  // resultNav.style.backgroundColor = event.target.value;
-  // resultMenu.style.backgroundColor = event.target.value;
-  // header.style.backgroundColor = event.target.value;
-  document.documentElement.style.setProperty(
-    "--primary-color",
-    event.target.value
-  );
-});
+
+
+
+    changeP.classList.toggle("dark-toggle")
+    changeP.classList.toggle("light-toggle")
+    if (changeP.classList.contains("dark-toggle")) {
+        changeP.innerHTML = "Light<br>Theme"
+    } else if (changeP.classList.contains("light-toggle")) {
+        changeP.innerHTML = "Dark<br>Theme"
+    }
+})
+
+themeColor.addEventListener("input", function (event) { /* insérer balise ici pour changement couleur */
+    // const resultNav = document.querySelector("nav");
+    // const resultMenu = document.querySelector(".menu");
+    // const header = document.querySelector("header");
+    // resultNav.style.backgroundColor = event.target.value;
+    // resultMenu.style.backgroundColor = event.target.value;
+    // header.style.backgroundColor = event.target.value;
+    document.documentElement.style.setProperty('--primary-color', event.target.value);
+})
+
+
+let screenWidth = window.innerWidth;
+const nav = document.querySelector("ul");
+const darkBox = document.querySelector(".dark-theme");
+const colorBox = document.querySelector(".color-theme");
+const tendances = document.querySelector(".tendances");
+const parametres = document.querySelector(".parametres");
+
+
+if (window.innerWidth > 600) {
+    nav.appendChild(tendances);
+    nav.appendChild(darkBox);
+    nav.appendChild(colorBox);
+    nav.appendChild(parametres);
+} else {
+    menu.appendChild(tendances);
+    menu.appendChild(parametres);
+    menu.appendChild(darkBox);
+    menu.appendChild(colorBox);
+}
+
+window.addEventListener("resize", function () {
+    if (window.innerWidth > 600) {
+        nav.appendChild(tendances);
+        nav.appendChild(darkBox);
+        nav.appendChild(colorBox);
+        nav.appendChild(parametres);
+    } else {
+        menu.appendChild(tendances);
+        menu.appendChild(parametres);
+        menu.appendChild(darkBox);
+        menu.appendChild(colorBox);
+    }
+})
