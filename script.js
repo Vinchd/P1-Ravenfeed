@@ -270,7 +270,7 @@ const tendances = document.querySelector(".tendances");
 const parametres = document.querySelector(".parametres");
 
 
-if (this.window.innerWidth > 600) {
+if (window.innerWidth > 600) {
     nav.appendChild(tendances);
     nav.appendChild(darkBox);
     nav.appendChild(colorBox);
@@ -284,7 +284,7 @@ if (this.window.innerWidth > 600) {
 }
 
 window.addEventListener("resize", function () {
-    if (this.window.innerWidth > 600) {
+    if (window.innerWidth > 600) {
         nav.appendChild(tendances);
         nav.appendChild(darkBox);
         nav.appendChild(colorBox);
