@@ -6,11 +6,13 @@
 }
 
 :root {
-    --primary-color: #9d3852;
-    --light-text: #f5f5f5;
-    --secondary-color: #d0d1d6;
-    --light: #ffffff;
-    --saySomething-color: #535353;
+  --primary-color: #2a3f4c;
+  --light-text: #f5f5f5;
+  --secondary-color: #d0d1d6;
+  --light: #ffffff;
+  --saySomething-color: #535353;
+  --dark-shadow: rgb(22, 43, 56);
+  --light-shadow: rgb(62, 83, 96);
 }
 
 /* Toute les balises */
@@ -211,20 +213,22 @@ header {
   flex-direction: row-reverse;
   justify-content: center;
   background-color: var(--primary-color);
-  padding: 20px;
+  height: 10%;
   width: 100%;
   position: fixed;
   top: 0;
 }
 
 header h1 {
-  color: white;
+  color: var(--light-text);
   font-size: 2rem;
+  align-self: center;
 }
 
 /* Image du header */
-header img {
-  max-width: 48px;
+header .logo {
+  /* max-width: 48px; */
+  padding: 10px;
   margin-right: 20px;
 }
 
@@ -277,12 +281,12 @@ li a {
 }
 
 .line {
-    position: absolute;
-    display: block;
-    width: 32px;
-    height: 2px;
-    background: var(--light-text);
-    transition: all 0.3s ease-out;
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--light-text);
+  transition: all 0.3s ease-out;
 }
 
 .l1 {
@@ -344,16 +348,17 @@ li a {
   height: 100%;
 }
 
-/* .menu a:hover,
+.menu a:hover,
 .menu div:hover,
 li a:hover,
 .nav-toggler:hover {
-    box-shadow: 5px 5px 10px #802d42, -5px -5px 10px #bb4361;
-    width: 92%;
-    height: 100%;
-    border-radius: 15px;
-    margin-top: 5px;
-} */
+  box-shadow: 5px 5px 10px var(--dark-shadow),
+    -5px -5px 10px var(--light-shadow);
+  width: 92%;
+  height: 100%;
+  border-radius: 15px;
+  margin-top: 5px;
+}
 
 .menu p {
   width: auto;
@@ -418,26 +423,6 @@ nav,
 
 @media screen and (min-width: 600px) {
   /* Header deskop */
-  header {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    background-color: var(--primary-color);
-    padding: 20px;
-    width: 100%;
-    height: 10%;
-  }
-
-  header img {
-    max-width: 48px;
-    margin-right: 80px;
-  }
-
-  header h1 {
-    color: white;
-    font-size: 2rem;
-  }
-
   nav {
     position: fixed;
     left: 0;
