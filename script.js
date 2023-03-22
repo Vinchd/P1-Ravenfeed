@@ -1,4 +1,3 @@
-
 const saySomething = document.querySelector(".say-something");
 const newMessage = document.querySelector(".new-message");
 const postButton = document.querySelector("#post");
@@ -216,9 +215,11 @@ function createTweet(nameF, pictureF, newTweetContent) {
   // Gestion du nombre de like : +1 par click
   compteurLikes.addEventListener("click", function () {
     numberLikes++;
-    console.log(`<img src="assets/icons/thumbs-up-outline.svg" alt="Like"/> ${numberLikes}`);
+    console.log(
+      `<img src="assets/icons/thumbs-up-outline.svg" alt="Like"/> ${numberLikes}`
+    );
     compteurLikes.innerHTML = `<img src="assets/icons/thumbs-up-outline.svg" width="16px" height="16px" alt="Like"/> ${numberLikes}&nbsp;&nbsp;`;
-});
+  });
 
   // Compteur des commentaires
   const comments = document.createElement("div");
@@ -227,9 +228,8 @@ function createTweet(nameF, pictureF, newTweetContent) {
 
   const compteurComments = document.createElement("p");
   compteurComments.classList.add("compteur-comments");
-  compteurComments.innerHTML = `<img src="assets/icons/chatbox-ellipses-outline.svg" width="16px" height="16px" alt="Commentaire"/> ${ 0 } &nbsp;&nbsp;`;
+  compteurComments.innerHTML = `<img src="assets/icons/chatbox-ellipses-outline.svg" width="16px" height="16px" alt="Commentaire"/> ${0} &nbsp;&nbsp;`;
   comments.appendChild(compteurComments);
-  
 
   // Compteur des partages
   const shares = document.createElement("div");
@@ -238,22 +238,19 @@ function createTweet(nameF, pictureF, newTweetContent) {
 
   const compteurShares = document.createElement("p");
   compteurShares.classList.add("compteur-shares");
-  compteurShares.innerHTML = `<img src="assets/icons/repeat-outline.svg" width="16px" height="16px" alt="Shares"/> ${ 0 } &nbsp;&nbsp;`;
+  compteurShares.innerHTML = `<img src="assets/icons/repeat-outline.svg" width="16px" height="16px" alt="Shares"/> ${0} &nbsp;&nbsp;`;
   shares.appendChild(compteurShares);
 
-  compteurShares.addEventListener('click', function () {
+  compteurShares.addEventListener("click", function () {
     numberShares++;
-    compteurShares.innerHTML = `🔁 ${numberShares}`;
-    swal.fire ({
-      titleText: 'Post partagé sur votre profil !',
-      icon: 'success',
-      confirmButtonColor: '#d0d1d6',
-      confirmButtonText: 'Youpi !'
-
-
+    compteurShares.innerHTML = `<img src="assets/icons/repeat-outline.svg" width="16px" height="16px" alt="Shares"/> ${numberShares}`;
+    swal.fire({
+      titleText: "Post partagé sur votre profil !",
+      icon: "success",
+      confirmButtonColor: "#d0d1d6",
+      confirmButtonText: "Youpi !",
     });
-    
-  })
+  });
 
   // Bonton pour répondre à un Tweet
   const replyButton = document.createElement("button");

@@ -239,7 +239,6 @@ header h1 {
 
 /* Image du header */
 header .logo {
-  max-width: 3rem;
   margin-right: 1.25rem;
   padding: 10px;
   cursor: pointer;
