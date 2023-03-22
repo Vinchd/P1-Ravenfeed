@@ -391,16 +391,6 @@ nav div:hover {
   cursor: pointer;
 }
 
-.dark {
-  background-color: #313338;
-  color: white;
-}
-
-.dark-tweet {
-  background-color: #6b6b6b;
-  color: white;
-}
-
 nav,
 .menu {
   font-size: 3.5vw;
@@ -494,13 +484,23 @@ nav,
   overflow: auto;
   resize: none;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   margin-bottom: 1rem;
   padding: 0.5rem;
 }
 
 #comment-message:focus {
   outline: none;
+}
+
+.dark {
+  background-color: #313338;
+  color: white;
+}
+
+.dark-tweet {
+  background-color: #6b6b6b;
+  color: white;
 }
 
 @media screen and (min-width: 600px) {
@@ -578,13 +578,23 @@ nav,
     margin-right: 1rem;
     border-left: 1px solid var(--saySomething-color);
   }
+
+  .trend h2 {
+    font-size: 1rem;
+    text-align: center;
+    position: relative;
+    bottom: 5%;
+  }
+
   .trend a {
     text-decoration: none;
     color: var(--saySomething-color);
   }
+
   .trend-dark:visited {
     color: var(--light-text);
   }
+
   .trend a:hover {
     text-decoration: underline;
     color: var(--primary-color);
@@ -593,6 +603,9 @@ nav,
 
 @media screen and (600px <= width <= 890px) {
   .trend {
+    font-size: 1.5vw;
+  }
+  .trend h2 {
     font-size: 1.5vw;
   }
 }

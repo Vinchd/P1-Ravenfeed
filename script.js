@@ -292,9 +292,6 @@ function createTweet(nameF, pictureF, newTweetContent) {
 
   const newComm = document.createElement("div");
   newComm.classList.add("new-comm");
-  if (!dark.classList.contains("dark")) {
-    newComm.classList.add("dark-tweet");
-  }
   tweets.appendChild(newComm);
 
   // Gestion du popup des commentaires et de leur nombre : +1 par envoie
@@ -340,6 +337,7 @@ dark.addEventListener("click", function () {
   const changeP = document.querySelector(".dark-theme label");
   const boxMessage = document.querySelectorAll(".message");
   const boxTweet = document.querySelectorAll(".tweet");
+  const popupContainer = document.querySelector(".popup-container");
 
   toggle.classList.toggle("dark");
   dark.classList.toggle("dark");
@@ -350,8 +348,16 @@ dark.addEventListener("click", function () {
 
   for (let i = 0; i < boxTweet.length; i++) {
     boxTweet[i].classList.toggle("dark-tweet");
-    console.log(boxTweet[i]);
   }
+
+  if (!dark.classList.contains("dark")) {
+    popupContainer.classList.add("dark-tweet");
+  } else {
+    popupContainer.classList.remove("dark-tweet");
+  }
+  popupContainer[i].classList.toggle("dark-tweet");
+  // for (let i = 0; i < popupContainer.length; i++) {
+  // }
 
   for (let i of trend) {
     i.classList.toggle("trend-dark");
