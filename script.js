@@ -89,7 +89,8 @@ const persons = [
     name: "Stéphane",
     picture:
       "	https://storage.googleapis.com/quest_editor_uploads/TinUgH8n5ye256CDqy4nFSiZDZ4dpw63.jpg",
-    message: "Pfiou j'ai le cerveau en compote à cause des spreads, j'ai rien compris...",
+    message:
+      "Pfiou j'ai le cerveau en compote à cause des spreads, j'ai rien compris...",
   },
   {
     name: "Sébastien",
@@ -286,7 +287,7 @@ function createTweet(nameF, pictureF, newTweetContent) {
   // Bonton pour répondre à un Tweet
   const replyButton = document.createElement("button");
   replyButton.classList.add("reply-button");
-  replyButton.innerHTML = "Reply";
+  replyButton.innerHTML = "Répondre";
   tweetActions.appendChild(replyButton);
 
   const newComm = document.createElement("div");
@@ -304,7 +305,7 @@ function createTweet(nameF, pictureF, newTweetContent) {
       <div class="popup-back"></div>
       <div class="popup-container">
       <textarea id="comment-message" name="comment-message" placeholder="Ecrivez votre commentaire"></textarea><br />
-        <button class="add-comment" id="popup-close">Add your comment</button>
+        <button class="add-comment" id="popup-close">Commenter</button>
       </div>
     </div>
     `;
@@ -322,7 +323,7 @@ function createTweet(nameF, pictureF, newTweetContent) {
     // Incrémentation du compteur de commentaires
     numberComments++;
     console.log(`💬 ${numberComments}`);
-    compteurComments.innerHTML = `💬 ${numberComments}&nbsp;&nbsp;`;
+    compteurComments.innerHTML = `<img src="assets/icons/chatbox-ellipses-outline.svg" width="16px" height="16px" alt="Commentaire"/> ${numberComments}&nbsp;&nbsp;`;
   });
 }
 

@@ -71,7 +71,7 @@ main {
 
 .profile-name {
   font-weight: bold;
-  color: var(--light);
+  color: var(--light-text);
   font-size: small;
   text-align: center;
 }
@@ -93,7 +93,7 @@ main {
 }
 
 .message {
-  background-color: var(--light);
+  background-color: var(--light-text);
   height: 7rem;
   border-radius: 12px;
   padding: 0.5rem;
@@ -141,8 +141,8 @@ main {
 
 .reply-button {
   height: 1.5rem;
-  color: var(--light);
-  width: 4rem;
+  color: var(--light-text);
+  padding: 0 1rem;
   border-radius: 8px;
   background-color: var(--primary-color);
   border: 0;
@@ -213,7 +213,7 @@ main {
   cursor: pointer;
   display: block;
   height: 1.5rem;
-  color: var(--light);
+  color: var(--light-text);
   width: 4rem;
   border-radius: 8px;
   background-color: var(--primary-color);
@@ -443,7 +443,7 @@ nav,
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, .5)
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .popup-container {
@@ -475,7 +475,7 @@ nav,
   cursor: pointer;
   display: block;
   height: 1.5rem;
-  color: var(--light);
+  color: var(--light-text);
   padding: 0 1rem;
   border-radius: 8px;
   background-color: var(--primary-color);
@@ -499,7 +499,6 @@ nav,
 }
 
 @media screen and (min-width: 600px) {
-
   /* Header deskop */
   nav {
     position: fixed;
