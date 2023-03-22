@@ -26,7 +26,7 @@ const persons = [
   },
   {
     name: "Badis",
-    picture: "	https://github.com/badis69.png?size=300",
+    picture: "https://github.com/badis69.png?size=300",
   },
   {
     name: "Chloé",
@@ -43,7 +43,7 @@ const persons = [
   },
   {
     name: "Hafsa",
-    picture: "	https://github.com/hxfsa.png?size=300",
+    picture: "https://github.com/hxfsa.png?size=300",
   },
   {
     name: "Jérémy",
@@ -52,7 +52,7 @@ const persons = [
   },
   {
     name: "Kylian",
-    picture: "	https://github.com/Kyxk.png?size=300",
+    picture: "https://github.com/Kyxk.png?size=300",
   },
   {
     name: "Oyhana",
@@ -85,7 +85,7 @@ const persons = [
   },
   {
     name: "Thibaut",
-    picture: "	https://github.com/neolink78.png?size=300",
+    picture: "https://github.com/neolink78.png?size=300",
   },
   {
     name: "Victor",
@@ -93,7 +93,7 @@ const persons = [
   },
   {
     name: "Vincent",
-    picture: "	https://github.com/neolink78.png?size=300",
+    picture: "https://avatars.githubusercontent.com/u/123705048?v=4",
   },
   {
     name: "Youcef",
@@ -210,26 +210,26 @@ function createTweet(nameF, pictureF, newTweetContent) {
 
   const compteurLikes = document.createElement("p");
   compteurLikes.classList.add("compteur-likes");
-  compteurLikes.innerHTML = `👍 ${numberLikes}&nbsp;&nbsp;`;
+  compteurLikes.innerHTML = `<img src="assets/icons/thumbs-up-outline.svg" width="16px" height="16px" alt="Like"/> ${numberLikes}&nbsp;&nbsp;`;
   likes.appendChild(compteurLikes);
 
   // Gestion du nombre de like : +1 par click
   compteurLikes.addEventListener("click", function () {
     numberLikes++;
-    console.log(`👍 ${numberLikes}`);
-    compteurLikes.innerHTML = `👍 ${numberLikes}&nbsp;&nbsp;`;
-  });
-  
+    console.log(`<img src="assets/icons/thumbs-up-outline.svg" alt="Like"/> ${numberLikes}`);
+    compteurLikes.innerHTML = `<img src="assets/icons/thumbs-up-outline.svg" width="16px" height="16px" alt="Like"/> ${numberLikes}&nbsp;&nbsp;`;
+});
 
   // Compteur des commentaires
   const comments = document.createElement("div");
-  comments.classList.add("likes");
+  comments.classList.add("comments");
   icones.appendChild(comments);
 
   const compteurComments = document.createElement("p");
   compteurComments.classList.add("compteur-comments");
-  compteurComments.innerHTML = "💬 0&nbsp;&nbsp;";
+  compteurComments.innerHTML = `<img src="assets/icons/chatbox-ellipses-outline.svg" width="16px" height="16px" alt="Commentaire"/> ${ 0 } &nbsp;&nbsp;`;
   comments.appendChild(compteurComments);
+  
 
   // Compteur des partages
   const shares = document.createElement("div");
@@ -238,7 +238,7 @@ function createTweet(nameF, pictureF, newTweetContent) {
 
   const compteurShares = document.createElement("p");
   compteurShares.classList.add("compteur-shares");
-  compteurShares.innerHTML = "🔁 0";
+  compteurShares.innerHTML = `<img src="assets/icons/repeat-outline.svg" width="16px" height="16px" alt="Shares"/> ${ 0 } &nbsp;&nbsp;`;
   shares.appendChild(compteurShares);
 
   compteurShares.addEventListener('click', function () {
@@ -269,9 +269,9 @@ hamburgerButton.addEventListener("click", function () {
   menu.classList.toggle("active");
 });
 
+/* insérer balise ici pour darktheme */
 dark.addEventListener("click", function () {
-  /* insérer balise ici pour darktheme */ const toggle =
-    document.querySelector("body");
+  const toggle = document.querySelector("body");
   const changeP = document.querySelector(".dark-theme label");
   const boxMessage = document.querySelectorAll(".message");
   const boxTweet = document.querySelectorAll(".tweet");
@@ -299,9 +299,21 @@ dark.addEventListener("click", function () {
     changeP.innerHTML = "Dark<br>Theme";
   }
 });
+/* Fonction récupere couleur et converti en 3 variables pour rgb */
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : null;
+}
 
+/* insérer balise ici pour changement couleur */
 themeColor.addEventListener("input", function (event) {
-  /* insérer balise ici pour changement couleur */ // const resultNav = document.querySelector("nav");
+  // const resultNav = document.querySelector("nav");
   // const resultMenu = document.querySelector(".menu");
   // const header = document.querySelector("header");
   // resultNav.style.backgroundColor = event.target.value;
@@ -310,6 +322,20 @@ themeColor.addEventListener("input", function (event) {
   document.documentElement.style.setProperty(
     "--primary-color",
     event.target.value
+  );
+  const rLight = hexToRgb(event.target.value).r + 20;
+  const gLight = hexToRgb(event.target.value).g + 20;
+  const bLight = hexToRgb(event.target.value).b + 20;
+  const rDark = hexToRgb(event.target.value).r - 20;
+  const gDark = hexToRgb(event.target.value).g - 20;
+  const bDark = hexToRgb(event.target.value).b - 20;
+  document.documentElement.style.setProperty(
+    "--light-shadow",
+    `rgb(${rLight}, ${gLight}, ${bLight})`
+  );
+  document.documentElement.style.setProperty(
+    "--dark-shadow",
+    `rgb(${rDark}, ${gDark}, ${bDark})`
   );
 });
 
