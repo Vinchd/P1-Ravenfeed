@@ -224,8 +224,9 @@ header h1 {
 
 /* Image du header */
 header img {
-  max-width: 48px;
-  margin-right: 20px;
+  max-width: 3rem;
+  margin-right: 1.25rem;
+  cursor: pointer;
 }
 
 nav {
@@ -422,6 +423,7 @@ nav,
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
+    align-items: center;
     background-color: var(--primary-color);
     padding: 20px;
     width: 100%;
@@ -429,13 +431,17 @@ nav,
   }
 
   header img {
-    max-width: 48px;
-    margin-right: 80px;
+    max-width: 3rem;
+    margin-right: 1.25rem;
   }
 
   header h1 {
     color: white;
     font-size: 2rem;
+  }
+
+  .say-something {
+    margin-top: 1rem;
   }
 
   nav {
