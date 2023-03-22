@@ -113,7 +113,7 @@ main {
 }
 
 .icones {
-  cursor: pointer;
+
   height: 1.5rem;
   display: flex;
   justify-content: space-around;
@@ -127,12 +127,20 @@ main {
   margin-left: 0.5rem;
 }
 
+.compteur-likes {
+  cursor: pointer;
+}
+
 .compteur-likes img {
   margin-right: 5px;
 }
 
 .compteur-comments img {
   margin-right: 5px;
+}
+
+.compteur-shares {
+  cursor: pointer;
 }
 
 .compteur-shares img {
@@ -504,6 +512,7 @@ nav,
 }
 
 @media screen and (min-width: 600px) {
+
   /* Header deskop */
   nav {
     position: fixed;
@@ -528,6 +537,7 @@ nav,
     color: var(--light-text);
     text-align: center;
   }
+
   .dark-theme,
   .color-theme {
     width: 92%;
@@ -569,7 +579,7 @@ nav,
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 50%;
     width: 10vw;
@@ -578,20 +588,23 @@ nav,
     margin-right: 1rem;
     border-left: 1px solid var(--saySomething-color);
   }
+
   .trend a {
     text-decoration: none;
     color: var(--saySomething-color);
   }
+
   .trend-dark:visited {
     color: var(--light-text);
   }
+
   .trend a:hover {
     text-decoration: underline;
     color: var(--primary-color);
   }
 }
 
-@media screen and (600px <= width <= 890px) {
+@media screen and (600px <=width <=890px) {
   .trend {
     font-size: 1.5vw;
   }

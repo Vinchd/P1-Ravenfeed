@@ -9,7 +9,6 @@ const menu = document.querySelector(".menu");
 const dark = document.querySelector(".dark-button");
 const themeColor = document.querySelector("#color");
 const countLikes = document.getElementsByClassName("compteur-likes");
-let count = [136];
 let indiceCompteur = 0;
 
 // Tableau des profils des membres avec un Tweet par défaut
@@ -18,7 +17,7 @@ const persons = [
     name: "Anthony",
     picture:
       "https://storage.googleapis.com/quest_editor_uploads/r6XufUn3Fyc24ROrehmyRkl4wmTNaaYR.png",
-    message: "Ok ! Let's gooooo !",
+    message: "Ok ! Let's gooooo ! #JSWizards",
   },
   {
     name: "Alexis",
@@ -38,7 +37,7 @@ const persons = [
   {
     name: "Denis",
     picture: "https://github.com/ddZ6ii.png?size=300",
-    message: "Le JS c'est quand même mieux que le PHP, non ?",
+    message: "Le JS c'est quand même mieux que le PHP, non ? #JSWizards",
   },
   {
     name: "Enzo",
@@ -49,13 +48,13 @@ const persons = [
   {
     name: "Hafsa",
     picture: "https://github.com/hxfsa.png?size=300",
-    message: "Je code plus vite que mon ombre 😼",
+    message: "Je code plus vite que mon ombre 😼 #WCS",
   },
   {
     name: "Jérémy",
     picture:
       "https://storage.googleapis.com/quest_editor_uploads/mfacLOEVn1wqxij2Hj1rLSM5zXyrKCCB.jpg",
-    message: "Un soucis de design ? Call me !",
+    message: "Un soucis de design ? Call me ! #WCS",
   },
   {
     name: "Kylian",
@@ -90,13 +89,13 @@ const persons = [
     picture:
       "	https://storage.googleapis.com/quest_editor_uploads/TinUgH8n5ye256CDqy4nFSiZDZ4dpw63.jpg",
     message:
-      "Pfiou j'ai le cerveau en compote à cause des spreads, j'ai rien compris...",
+      "Pfiou j'ai le cerveau en compote à cause des spreads, j'ai rien compris... #WCS",
   },
   {
     name: "Sébastien",
     picture:
       "https://storage.googleapis.com/quest_editor_uploads/eyHJwkIpfxXI7InahjmSfmMFfT9mlcGn.png",
-    message: "Euh ? Non rien...",
+    message: "Euh ? Non rien... #Inutile",
   },
   {
     name: "Thibaut",
@@ -106,7 +105,7 @@ const persons = [
   {
     name: "Victor",
     picture: "https://github.com/neolink78.png?size=300",
-    message: "C'est moi Victor le Castor ! 🦫",
+    message: "C'est moi Victor le Castor ! 🦫 #WCS",
   },
   {
     name: "Vincent",
@@ -116,7 +115,7 @@ const persons = [
   {
     name: "Youcef",
     picture: "https://www.gravatar.com/avatar/15780?d=retro&s=300",
-    message: "C'est génial le projet RavenFeed ! ❤️",
+    message: "C'est génial le projet RavenFeed ! #JSWizards ❤️",
   },
 ];
 
@@ -127,7 +126,7 @@ saySomething.addEventListener("click", function (event) {
 });
 
 // Génération de 3 Tweet Aléatoire pour les tests
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 30; i++) {
   let indice = Math.floor(Math.random() * persons.length);
   createTweet(
     persons[indice].name,
@@ -325,6 +324,7 @@ function createTweet(nameF, pictureF, newTweetContent) {
     console.log(`💬 ${numberComments}`);
     compteurComments.innerHTML = `<img src="assets/icons/chatbox-ellipses-outline.svg" width="16px" height="16px" alt="Commentaire"/> ${numberComments}&nbsp;&nbsp;`;
   });
+  getHashtag();
 }
 
 /* ----------------------------------- */
@@ -433,3 +433,99 @@ window.addEventListener("resize", function () {
     menu.appendChild(colorBox);
   }
 });
+
+// ----------------------------------------------------------------
+// Gestion des Hashtag
+// ----------------------------------------------------------------
+
+// Récupère tout les #
+function getHashtag() {
+  const allMessages = document.querySelectorAll(".message p");
+  let fullstring = "";
+  for (let i = 0; i < allMessages.length; i++) {
+    fullstring = fullstring + " " + allMessages[i].innerText;
+  }
+
+  // console.log(fullstring);
+
+  var string = fullstring;
+
+  let count2 = 0;
+  let mot = [];
+  let first = string.indexOf("#");
+  let last = 0;
+
+  while (first !== -1) {
+    count2++;
+    first = string.indexOf("#", first + 1);
+  }
+
+  console.log(`Compteur de # = ${count2}`);
+
+  first = string.indexOf("#");
+
+  for (let i = 0; i < count2; i++) {
+    first = string.indexOf("#", last);
+    // console.log(`Première position = ${first}`);
+    last = string.indexOf(" ", first);
+    last == -1 ? (last = string.length) : last;
+
+    // console.log(`Dernière position = ${last}`);
+
+    mot.push(string.substring(first, last));
+  }
+
+  console.log(mot);
+
+  //   return mot;
+  // }
+
+  // récupère les # unique
+  function getUniqueVal(value, index, self) {
+    return self.indexOf(value) === index;
+  }
+
+  // function triHashtag() {
+  // var tabHashtag = getHashtag();
+  var tabHashtag = mot;
+  var uniquesHashtag = tabHashtag.filter(getUniqueVal);
+  console.log("Hashtag unique :");
+  console.log(uniquesHashtag);
+  console.log("-------------------");
+
+  // compte les occurences de chaque # unique
+  let array = [];
+  let tableauCompteurHashtag = [];
+  let tableauObjHashtag = [];
+  let objHashtag = { nameHashtag: "", quantity: 0 };
+
+  for (let i = 0; i < uniquesHashtag.length; i++) {
+    array = tabHashtag.filter((element) => element == uniquesHashtag[i]);
+
+    console.log(`#${i + 1} = ${uniquesHashtag[i]} ; nombre = ${array.length}`);
+    tableauCompteurHashtag.push(array.length);
+
+    tableauObjHashtag.push({
+      quantity: tableauCompteurHashtag[i],
+      name: uniquesHashtag[i],
+    });
+  }
+
+  tableauObjHashtag.sort((a, b) => (a.quantity < b.quantity ? 1 : -1));
+
+  // console.log(tableauObjHashtag);
+
+  let trendHTML = `<div class="trend-title">Top 3 - #Hashtag</div>`;
+
+  // let indiceTrend;
+
+  tableauObjHashtag.length >= 3 ? indiceTrend = 3 : indiceTrend = tableauObjHashtag.length;
+
+  for (let i = 0; i < indiceTrend; i++) {
+    trendHTML += `<div><a href="#">${tableauObjHashtag[i].name}</a> / ${tableauObjHashtag[i].quantity}</div>`;
+  }
+
+  console.log(trendHTML);
+
+  document.querySelector(".trend").innerHTML = trendHTML;
+}
