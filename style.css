@@ -247,6 +247,7 @@ ul {
   height: 80px;
   width: 100%;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 li,
@@ -259,7 +260,6 @@ li a {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin: auto;
 }
 
 .icon {
@@ -350,8 +350,9 @@ li a {
 
 .menu a:hover,
 .menu div:hover,
-li a:hover,
-.nav-toggler:hover {
+.nav-toggler:hover,
+nav a:hover,
+nav div:hover {
   box-shadow: 5px 5px 10px var(--dark-shadow),
     -5px -5px 10px var(--light-shadow);
   width: 92%;
@@ -420,7 +421,9 @@ nav,
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+.trend {
+  display: none;
+}
 @media screen and (min-width: 600px) {
   /* Header deskop */
   nav {
@@ -445,6 +448,10 @@ nav,
     text-decoration: none;
     color: var(--light-text);
     text-align: center;
+  }
+  .dark-theme,
+  .color-theme {
+    width: 92%;
   }
 
   nav div {
@@ -476,5 +483,37 @@ nav,
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .trend {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 10vw;
+    height: 70vh;
+    transform: translate(0, -40%);
+    margin-right: 1rem;
+    border-left: 1px solid var(--saySomething-color);
+  }
+  .trend a {
+    text-decoration: none;
+    color: var(--saySomething-color);
+  }
+  .trend-dark:visited {
+    color: var(--light-text);
+  }
+  .trend a:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+  }
+}
+
+@media screen and (600px <= width <= 890px) {
+  .trend {
+    font-size: 1.5vw;
   }
 }
