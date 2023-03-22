@@ -18,85 +18,105 @@ const persons = [
     name: "Anthony",
     picture:
       "https://storage.googleapis.com/quest_editor_uploads/r6XufUn3Fyc24ROrehmyRkl4wmTNaaYR.png",
+    message: "Ok ! Let's gooooo !",
   },
   {
     name: "Alexis",
     picture: "https://github.com/AlexisChesneau.png?size=300",
+    message: "Le gras c'est la vie !",
   },
   {
     name: "Badis",
     picture: "https://github.com/badis69.png?size=300",
+    message: "On va manger des chips ! T'entends ? Des chips !",
   },
   {
     name: "Chloé",
     picture: "https://www.gravatar.com/avatar/54738?d=identicon&s=300",
+    message: "Hier j'ai mangé une pomme !",
   },
   {
     name: "Denis",
     picture: "https://github.com/ddZ6ii.png?size=300",
+    message: "Le JS c'est quand même mieux que le PHP, non ?",
   },
   {
     name: "Enzo",
     picture:
       "https://storage.googleapis.com/quest_editor_uploads/YSKI7qaSLm9lP0dod16OelpMs9WH5iRo.jpeg",
+    message: "J'ai une nouvelle casquette 😍",
   },
   {
     name: "Hafsa",
     picture: "https://github.com/hxfsa.png?size=300",
+    message: "Je code plus vite que mon ombre 😼",
   },
   {
     name: "Jérémy",
     picture:
       "https://storage.googleapis.com/quest_editor_uploads/mfacLOEVn1wqxij2Hj1rLSM5zXyrKCCB.jpg",
+    message: "Un soucis de design ? Call me !",
   },
   {
     name: "Kylian",
     picture: "https://github.com/Kyxk.png?size=300",
+    message: "Excellent le dernier chapitre de One Piece !",
   },
   {
     name: "Oyhana",
     picture:
       "https://storage.googleapis.com/quest_editor_uploads/M0dFOY3q5T7UipQdtdmpqP6aXU1uVImH.png",
+    message: "Aujourd'hui j'ai mis mes lentilles hihi !",
   },
   {
     name: "Pierre",
     picture:
       "https://storage.googleapis.com/quest_editor_uploads/R8XjJwZjvLEEu1helx3NqJrwiOBJQt5P.jpg",
+    message: "Vous avez vu le dernier match de la NFL ??? Une dinguerie !",
   },
   {
     name: "Roxane",
     picture: "https://www.gravatar.com/avatar/51089?d=identicon&s=300",
+    message: "Mon enfant est encore malade 😭",
   },
   {
     name: "Samuel",
     picture:
       "https://storage.googleapis.com/quest_editor_uploads/zUMCYxY9T7ImEB8t2kKgfjh3pDmJ9z29.jpg",
+    message: "On prend l'apéro quand ?!",
   },
   {
     name: "Stéphane",
     picture:
       "	https://storage.googleapis.com/quest_editor_uploads/TinUgH8n5ye256CDqy4nFSiZDZ4dpw63.jpg",
+    message:
+      "Pfiou j'ai le cerveau en compote à cause des spreads, j'ai rien compris...",
   },
   {
     name: "Sébastien",
     picture:
       "https://storage.googleapis.com/quest_editor_uploads/eyHJwkIpfxXI7InahjmSfmMFfT9mlcGn.png",
+    message: "Euh ? Non rien...",
   },
   {
     name: "Thibaut",
     picture: "https://github.com/neolink78.png?size=300",
+    message: "Je vais m'entrainer à la salle à 18h, qui veut venir ?",
   },
   {
     name: "Victor",
     picture: "https://github.com/neolink78.png?size=300",
+    message: "C'est moi Victor le Castor ! 🦫",
   },
   {
     name: "Vincent",
     picture: "https://avatars.githubusercontent.com/u/123705048?v=4",
+    message: "En vrai, la Wild Code School ça claque sa maman !",
   },
   {
     name: "Youcef",
     picture: "https://www.gravatar.com/avatar/15780?d=retro&s=300",
+    message: "C'est génial le projet RavenFeed ! ❤️",
   },
 ];
 
@@ -105,6 +125,17 @@ saySomething.addEventListener("click", function (event) {
   saySomething.style.display = "none";
   newMessage.style.display = "flex";
 });
+
+// Génération de 3 Tweet Aléatoire pour les tests
+for (let i = 0; i < 6; i++) {
+  let indice = Math.floor(Math.random() * persons.length);
+  createTweet(
+    persons[indice].name,
+    persons[indice].picture,
+    persons[indice].message
+    // textarea.value
+  );
+}
 
 // Création d'un nouveau Tweet à l'envoie du formulaire
 form.onsubmit = function (event) {
@@ -118,7 +149,7 @@ form.onsubmit = function (event) {
   createTweet(
     persons[indice].name,
     persons[indice].picture,
-    //persons[indice].message
+    // persons[indice].message
     textarea.value
   );
 
@@ -129,6 +160,8 @@ function createTweet(nameF, pictureF, newTweetContent) {
   // Initialisation des variables d'un Tweet
   let dateOfTheDay = new Date();
   let numberLikes = 0;
+  let numberComments = 0;
+  let numberShares = 0;
 
   // Récupération de la date et de l'heure du nouveau Tweet
   dateOfTheDay =
@@ -208,24 +241,26 @@ function createTweet(nameF, pictureF, newTweetContent) {
 
   const compteurLikes = document.createElement("p");
   compteurLikes.classList.add("compteur-likes");
-  compteurLikes.innerHTML = `👍 ${numberLikes}&nbsp;&nbsp;`;
+  compteurLikes.innerHTML = `<img src="assets/icons/thumbs-up-outline.svg" width="16px" height="16px" alt="Like"/> ${numberLikes}&nbsp;&nbsp;`;
   likes.appendChild(compteurLikes);
 
   // Gestion du nombre de like : +1 par click
   compteurLikes.addEventListener("click", function () {
     numberLikes++;
-    console.log(`👍 ${numberLikes}`);
-    compteurLikes.innerHTML = `👍 ${numberLikes}&nbsp;&nbsp;`;
+    console.log(
+      `<img src="assets/icons/thumbs-up-outline.svg" alt="Like"/> ${numberLikes}`
+    );
+    compteurLikes.innerHTML = `<img src="assets/icons/thumbs-up-outline.svg" width="16px" height="16px" alt="Like"/> ${numberLikes}&nbsp;&nbsp;`;
   });
 
   // Compteur des commentaires
   const comments = document.createElement("div");
-  comments.classList.add("likes");
+  comments.classList.add("comments");
   icones.appendChild(comments);
 
   const compteurComments = document.createElement("p");
   compteurComments.classList.add("compteur-comments");
-  compteurComments.innerHTML = "💬 0&nbsp;&nbsp;";
+  compteurComments.innerHTML = `<img src="assets/icons/chatbox-ellipses-outline.svg" width="16px" height="16px" alt="Commentaire"/> ${numberComments} &nbsp;&nbsp;`;
   comments.appendChild(compteurComments);
 
   // Compteur des partages
@@ -235,14 +270,61 @@ function createTweet(nameF, pictureF, newTweetContent) {
 
   const compteurShares = document.createElement("p");
   compteurShares.classList.add("compteur-shares");
-  compteurShares.innerHTML = "🔁 0";
+  compteurShares.innerHTML = `<img src="assets/icons/repeat-outline.svg" width="16px" height="16px" alt="Shares"/> ${numberShares} &nbsp;&nbsp;`;
   shares.appendChild(compteurShares);
+
+  compteurShares.addEventListener("click", function () {
+    numberShares++;
+    compteurShares.innerHTML = `<img src="assets/icons/repeat-outline.svg" width="16px" height="16px" alt="Shares"/> ${numberShares}`;
+    swal.fire({
+      titleText: "Post partagé sur votre profil !",
+      icon: "success",
+      confirmButtonColor: "#d0d1d6",
+      confirmButtonText: "Youpi !",
+    });
+  });
 
   // Bonton pour répondre à un Tweet
   const replyButton = document.createElement("button");
   replyButton.classList.add("reply-button");
-  replyButton.innerHTML = "Reply";
+  replyButton.innerHTML = "Répondre";
   tweetActions.appendChild(replyButton);
+
+  const newComm = document.createElement("div");
+  newComm.classList.add("new-comm");
+  if (!dark.classList.contains("dark")) {
+    newComm.classList.add("dark-tweet");
+  }
+  tweets.appendChild(newComm);
+
+  // Gestion du popup des commentaires et de leur nombre : +1 par envoie
+  replyButton.addEventListener("click", function () {
+    // Création de la div du PopUp
+    newComm.innerHTML = `
+    <div class="popup" id="popup">
+      <div class="popup-back"></div>
+      <div class="popup-container">
+      <textarea id="comment-message" name="comment-message" placeholder="Ecrivez votre commentaire"></textarea><br />
+        <button class="add-comment" id="popup-close">Commenter</button>
+      </div>
+    </div>
+    `;
+
+    // Affichage du PopUp
+    document.getElementById("popup").style.display = "block";
+
+    document
+      .getElementById("popup-close")
+      .addEventListener("click", function (e) {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("comment-message").value = "";
+      });
+
+    // Incrémentation du compteur de commentaires
+    numberComments++;
+    console.log(`💬 ${numberComments}`);
+    compteurComments.innerHTML = `<img src="assets/icons/chatbox-ellipses-outline.svg" width="16px" height="16px" alt="Commentaire"/> ${numberComments}&nbsp;&nbsp;`;
+  });
 }
 
 /* ----------------------------------- */
@@ -258,6 +340,7 @@ dark.addEventListener("click", function () {
   const changeP = document.querySelector(".dark-theme label");
   const boxMessage = document.querySelectorAll(".message");
   const boxTweet = document.querySelectorAll(".tweet");
+
   toggle.classList.toggle("dark");
   dark.classList.toggle("dark");
   textarea.classList.toggle("dark");
@@ -281,6 +364,8 @@ dark.addEventListener("click", function () {
   } else if (changeP.classList.contains("light-toggle")) {
     changeP.innerHTML = "Dark<br>Theme";
   }
+
+  // Darktheme du popup
 });
 /* Fonction récupere couleur et converti en 3 variables pour rgb */
 function hexToRgb(hex) {
