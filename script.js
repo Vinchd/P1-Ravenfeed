@@ -343,18 +343,18 @@ dark.addEventListener("click", function () {
 
   toggle.classList.toggle("dark");
   dark.classList.toggle("dark");
-  // boxMessage.classList.toggle("dark");
-  // boxTweet.style.backgroundColor = "#6b6b6b";
-  // saySomething.style.backgroundColor = "#6b6b6b";
-  // saySomething.style.color = "white"
-  // newMessage.style.backgroundColor = "#6b6b6b";
   textarea.classList.toggle("dark");
   saySomething.classList.toggle("dark-tweet");
   newMessage.classList.toggle("dark-tweet");
+  const trend = document.querySelectorAll(".trend a");
 
   for (let i = 0; i < boxTweet.length; i++) {
     boxTweet[i].classList.toggle("dark-tweet");
     console.log(boxTweet[i]);
+  }
+
+  for (let i of trend) {
+    i.classList.toggle("trend-dark");
   }
 
   changeP.classList.toggle("dark-toggle");
@@ -381,12 +381,6 @@ function hexToRgb(hex) {
 
 /* insérer balise ici pour changement couleur */
 themeColor.addEventListener("input", function (event) {
-  // const resultNav = document.querySelector("nav");
-  // const resultMenu = document.querySelector(".menu");
-  // const header = document.querySelector("header");
-  // resultNav.style.backgroundColor = event.target.value;
-  // resultMenu.style.backgroundColor = event.target.value;
-  // header.style.backgroundColor = event.target.value;
   document.documentElement.style.setProperty(
     "--primary-color",
     event.target.value
