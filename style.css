@@ -433,7 +433,73 @@ nav,
   transform: translate(-50%, -50%);
 }
 
+.popup {
+  display: none;
+}
+
+.popup-back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .5)
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 25px;
+  background: var(--secondary-color);
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  animation: zoom-in 1s ease 1;
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(0, 0) translate(-50%, -50%);
+  }
+
+  100% {
+    transform: scale(1, 1) translate(-50%, -50%);
+  }
+}
+
+#popup-close {
+  cursor: pointer;
+  display: block;
+  height: 1.5rem;
+  color: var(--light);
+  padding: 0 1rem;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  border: 0;
+}
+
+#comment-message {
+  display: block;
+  /* width: 100% !important;
+  height: 3rem !important; */
+  overflow: auto;
+  resize: none;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+#comment-message:focus {
+  outline: none;
+}
+
 @media screen and (min-width: 600px) {
+
   /* Header deskop */
   nav {
     position: fixed;
