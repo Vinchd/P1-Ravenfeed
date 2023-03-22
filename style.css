@@ -122,9 +122,21 @@ main {
 }
 
 .icones p {
-  display: inline-block;
+  display: flex;
   font-size: small;
   margin-left: 0.5rem;
+}
+
+.compteur-likes img {
+  margin-right: 5px;
+}
+
+.compteur-comments img {
+  margin-right: 5px;
+}
+
+.compteur-shares img {
+  margin-right: 5px;
 }
 
 .reply-button {
