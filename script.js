@@ -1,3 +1,4 @@
+
 const saySomething = document.querySelector(".say-something");
 const newMessage = document.querySelector(".new-message");
 const postButton = document.querySelector("#post");
@@ -129,6 +130,7 @@ function createTweet(nameF, pictureF, newTweetContent) {
   // Initialisation des variables d'un Tweet
   let dateOfTheDay = new Date();
   let numberLikes = 0;
+  let numberShares = 0;
 
   // Récupération de la date et de l'heure du nouveau Tweet
   dateOfTheDay =
@@ -218,7 +220,6 @@ function createTweet(nameF, pictureF, newTweetContent) {
     compteurLikes.innerHTML = `<img src="assets/icons/thumbs-up-outline.svg" width="16px" height="16px" alt="Like"/> ${numberLikes}&nbsp;&nbsp;`;
 });
 
-
   // Compteur des commentaires
   const comments = document.createElement("div");
   comments.classList.add("comments");
@@ -239,6 +240,20 @@ function createTweet(nameF, pictureF, newTweetContent) {
   compteurShares.classList.add("compteur-shares");
   compteurShares.innerHTML = `<img src="assets/icons/repeat-outline.svg" width="16px" height="16px" alt="Shares"/> ${ 0 } &nbsp;&nbsp;`;
   shares.appendChild(compteurShares);
+
+  compteurShares.addEventListener('click', function () {
+    numberShares++;
+    compteurShares.innerHTML = `🔁 ${numberShares}`;
+    swal.fire ({
+      titleText: 'Post partagé sur votre profil !',
+      icon: 'success',
+      confirmButtonColor: '#d0d1d6',
+      confirmButtonText: 'Youpi !'
+
+
+    });
+    
+  })
 
   // Bonton pour répondre à un Tweet
   const replyButton = document.createElement("button");

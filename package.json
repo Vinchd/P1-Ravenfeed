@@ -1,0 +1,22 @@
+{
+  "name": "projet1_ravenclaw",
+  "version": "1.0.0",
+  "description": "First project of AIT OUARRAOU Hafsa, FABER Samuel, FABIER Victor, DAVIAUD Vincent",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vinchd/Projet1_Ravenclaw.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vinchd/Projet1_Ravenclaw/issues"
+  },
+  "homepage": "https://github.com/Vinchd/Projet1_Ravenclaw#readme",
+  "dependencies": {
+    "sweetalert2": "^11.7.3"
+  }
+}
