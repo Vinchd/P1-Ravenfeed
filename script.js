@@ -208,25 +208,27 @@ function createTweet(nameF, pictureF, newTweetContent) {
 
   const compteurLikes = document.createElement("p");
   compteurLikes.classList.add("compteur-likes");
-  compteurLikes.innerHTML = `👍 ${numberLikes}&nbsp;&nbsp;`;
+  compteurLikes.innerHTML = `<img src="assets/icons/thumbs-up-outline.svg" width="16px" height="16px" alt="Like"/> ${numberLikes}&nbsp;&nbsp;`;
   likes.appendChild(compteurLikes);
 
   // Gestion du nombre de like : +1 par click
   compteurLikes.addEventListener("click", function () {
     numberLikes++;
-    console.log(`👍 ${numberLikes}`);
-    compteurLikes.innerHTML = `👍 ${numberLikes}&nbsp;&nbsp;`;
-  });
+    console.log(`<img src="assets/icons/thumbs-up-outline.svg" alt="Like"/> ${numberLikes}`);
+    compteurLikes.innerHTML = `<img src="assets/icons/thumbs-up-outline.svg" width="16px" height="16px" alt="Like"/> ${numberLikes}&nbsp;&nbsp;`;
+});
+
 
   // Compteur des commentaires
   const comments = document.createElement("div");
-  comments.classList.add("likes");
+  comments.classList.add("comments");
   icones.appendChild(comments);
 
   const compteurComments = document.createElement("p");
   compteurComments.classList.add("compteur-comments");
-  compteurComments.innerHTML = "💬 0&nbsp;&nbsp;";
+  compteurComments.innerHTML = `<img src="assets/icons/chatbox-ellipses-outline.svg" width="16px" height="16px" alt="Commentaire"/> ${ 0 } &nbsp;&nbsp;`;
   comments.appendChild(compteurComments);
+  
 
   // Compteur des partages
   const shares = document.createElement("div");
@@ -235,7 +237,7 @@ function createTweet(nameF, pictureF, newTweetContent) {
 
   const compteurShares = document.createElement("p");
   compteurShares.classList.add("compteur-shares");
-  compteurShares.innerHTML = "🔁 0";
+  compteurShares.innerHTML = `<img src="assets/icons/repeat-outline.svg" width="16px" height="16px" alt="Shares"/> ${ 0 } &nbsp;&nbsp;`;
   shares.appendChild(compteurShares);
 
   // Bonton pour répondre à un Tweet
