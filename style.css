@@ -26,7 +26,27 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #e2e2e2;
-  font-family: "montserrat";
+  font-family: "montserrat", Arial, Helvetica, sans-serif;
+}
+
+.tweet-message::-webkit-input-placeholder,
+#comment-message::-webkit-input-placeholder {
+  font-family: "montserrat", Arial, Helvetica, sans-serif;
+}
+
+.tweet-message:-ms-input-placeholder,
+#comment-message:-ms-input-placeholder {
+  font-family: "montserrat", Arial, Helvetica, sans-serif;
+}
+
+.tweet-message:-moz-placeholder,
+#comment-message:-moz-placeholder {
+  font-family: "montserrat", Arial, Helvetica, sans-serif;
+}
+
+.tweet-message::-moz-placeholder,
+#comment-message::-moz-placeholder {
+  font-family: "montserrat", Arial, Helvetica, sans-serif;
 }
 
 main {
@@ -433,6 +453,7 @@ nav,
 }
 
 .popup-back {
+  z-index: 50;
   position: fixed;
   top: 0;
   left: 0;
@@ -442,6 +463,7 @@ nav,
 }
 
 .popup-container {
+  z-index: 51;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -479,8 +501,8 @@ nav,
 
 #comment-message {
   display: block;
-  /* width: 100% !important;
-  height: 3rem !important; */
+  /* /* width: 100% !important; */
+  height: 4rem;
   overflow: auto;
   resize: none;
   border: none;
@@ -569,7 +591,7 @@ nav,
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 50%;
     width: 10vw;
@@ -598,6 +620,14 @@ nav,
   .trend a:hover {
     text-decoration: underline;
     color: var(--primary-color);
+  }
+
+  nav a:hover,
+  nav div:hover {
+    border-radius: 0;
+    width: 100%;
+    box-shadow: 0px 5px 10px var(--dark-shadow),
+      0px -5px 10px var(--light-shadow);
   }
 }
 
