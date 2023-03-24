@@ -150,7 +150,7 @@ main {
 .reply-button {
   height: 1.5rem;
   color: var(--light-text);
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   border-radius: 8px;
   background-color: var(--primary-color);
   border: 0;
@@ -489,7 +489,7 @@ nav,
   display: block;
   height: 1.5rem;
   color: var(--light-text);
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   border-radius: 8px;
   background-color: var(--primary-color);
   border: 0;
