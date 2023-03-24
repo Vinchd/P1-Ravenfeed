@@ -133,7 +133,7 @@ main {
 }
 
 .icones {
-  cursor: pointer;
+
   height: 1.5rem;
   display: flex;
   justify-content: space-around;
@@ -147,12 +147,20 @@ main {
   margin-left: 0.5rem;
 }
 
+.compteur-likes {
+  cursor: pointer;
+}
+
 .compteur-likes img {
   margin-right: 5px;
 }
 
 .compteur-comments img {
   margin-right: 5px;
+}
+
+.compteur-shares {
+  cursor: pointer;
 }
 
 .compteur-shares img {
@@ -162,7 +170,7 @@ main {
 .reply-button {
   height: 1.5rem;
   color: var(--light-text);
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   border-radius: 8px;
   background-color: var(--primary-color);
   border: 0;
@@ -493,7 +501,7 @@ nav,
   display: block;
   height: 1.5rem;
   color: var(--light-text);
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   border-radius: 8px;
   background-color: var(--primary-color);
   border: 0;
@@ -526,6 +534,7 @@ nav,
 }
 
 @media screen and (min-width: 600px) {
+
   /* Header deskop */
   nav {
     position: fixed;
@@ -550,6 +559,7 @@ nav,
     color: var(--light-text);
     text-align: center;
   }
+
   .dark-theme,
   .color-theme {
     width: 92%;
@@ -631,7 +641,7 @@ nav,
   }
 }
 
-@media screen and (600px <= width <= 890px) {
+@media screen and (600px <=width <=890px) {
   .trend {
     font-size: 1.5vw;
   }
@@ -639,3 +649,4 @@ nav,
     font-size: 1.5vw;
   }
 }
+
