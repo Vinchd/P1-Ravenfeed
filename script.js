@@ -515,7 +515,7 @@ function getHashtag() {
 
   // console.log(tableauObjHashtag);
 
-  let trendHTML = ``;
+  let trendHTML = `<h2>Top 3 - #Hashtag</h2>`;
 
   // let indiceTrend;
 
