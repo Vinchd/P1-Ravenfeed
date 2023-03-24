@@ -18,7 +18,8 @@ const persons = [
     name: "Anthony",
     picture:
       "https://storage.googleapis.com/quest_editor_uploads/r6XufUn3Fyc24ROrehmyRkl4wmTNaaYR.png",
-    message: "Ok ! Let's gooooo !",
+    message:
+      "Vous avez vu ?! Avec mon navigateur Arc je peux faire des copier/coller ! 🤯",
   },
   {
     name: "Alexis",
@@ -247,9 +248,6 @@ function createTweet(nameF, pictureF, newTweetContent) {
   // Gestion du nombre de like : +1 par click
   compteurLikes.addEventListener("click", function () {
     numberLikes++;
-    console.log(
-      `<img src="assets/icons/thumbs-up-outline.svg" alt="Like"/> ${numberLikes}`
-    );
     compteurLikes.innerHTML = `<img src="assets/icons/thumbs-up-outline.svg" width="16px" height="16px" alt="Like"/> ${numberLikes}&nbsp;&nbsp;`;
   });
 
@@ -292,9 +290,6 @@ function createTweet(nameF, pictureF, newTweetContent) {
 
   const newComm = document.createElement("div");
   newComm.classList.add("new-comm");
-  if (!dark.classList.contains("dark")) {
-    newComm.classList.add("dark-tweet");
-  }
   tweets.appendChild(newComm);
 
   // Gestion du popup des commentaires et de leur nombre : +1 par envoie
@@ -310,6 +305,12 @@ function createTweet(nameF, pictureF, newTweetContent) {
     </div>
     `;
 
+    const isDarkTheme = dark.classList.contains("dark");
+    const popupStyle = !isDarkTheme ? "dark-tweet" : "";
+    if (popupStyle) {
+      document.querySelector(".popup-container").classList.add(popupStyle);
+    }
+
     // Affichage du PopUp
     document.getElementById("popup").style.display = "block";
 
@@ -322,7 +323,6 @@ function createTweet(nameF, pictureF, newTweetContent) {
 
     // Incrémentation du compteur de commentaires
     numberComments++;
-    console.log(`💬 ${numberComments}`);
     compteurComments.innerHTML = `<img src="assets/icons/chatbox-ellipses-outline.svg" width="16px" height="16px" alt="Commentaire"/> ${numberComments}&nbsp;&nbsp;`;
   });
 }
@@ -340,6 +340,7 @@ dark.addEventListener("click", function () {
   const changeP = document.querySelector(".dark-theme label");
   const boxMessage = document.querySelectorAll(".message");
   const boxTweet = document.querySelectorAll(".tweet");
+  const popupContainer = document.querySelector(".popup-container");
 
   toggle.classList.toggle("dark");
   dark.classList.toggle("dark");
@@ -350,7 +351,6 @@ dark.addEventListener("click", function () {
 
   for (let i = 0; i < boxTweet.length; i++) {
     boxTweet[i].classList.toggle("dark-tweet");
-    console.log(boxTweet[i]);
   }
 
   for (let i of trend) {
@@ -364,9 +364,8 @@ dark.addEventListener("click", function () {
   } else if (changeP.classList.contains("light-toggle")) {
     changeP.innerHTML = "Dark<br>Theme";
   }
-
-  // Darktheme du popup
 });
+
 /* Fonction récupere couleur et converti en 3 variables pour rgb */
 function hexToRgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -385,12 +384,12 @@ themeColor.addEventListener("input", function (event) {
     "--primary-color",
     event.target.value
   );
-  const rLight = hexToRgb(event.target.value).r + 20;
-  const gLight = hexToRgb(event.target.value).g + 20;
-  const bLight = hexToRgb(event.target.value).b + 20;
-  const rDark = hexToRgb(event.target.value).r - 20;
-  const gDark = hexToRgb(event.target.value).g - 20;
-  const bDark = hexToRgb(event.target.value).b - 20;
+  const rLight = hexToRgb(event.target.value).r + 15;
+  const gLight = hexToRgb(event.target.value).g + 15;
+  const bLight = hexToRgb(event.target.value).b + 15;
+  const rDark = hexToRgb(event.target.value).r - 15;
+  const gDark = hexToRgb(event.target.value).g - 15;
+  const bDark = hexToRgb(event.target.value).b - 15;
   document.documentElement.style.setProperty(
     "--light-shadow",
     `rgb(${rLight}, ${gLight}, ${bLight})`
