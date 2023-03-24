@@ -626,7 +626,7 @@ nav,
     color: var(--saySomething-color);
   }
 
-  .trend-dark:visited {
+  .trend-dark:visited, .trend-dark {
     color: var(--light-text);
   }
 
