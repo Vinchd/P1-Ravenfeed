@@ -6,13 +6,13 @@
 }
 
 :root {
-  --primary-color: #2a3f4c;
+  --primary-color: #9d3852;
   --light-text: #f5f5f5;
   --secondary-color: #d0d1d6;
   --light: #ffffff;
   --saySomething-color: #535353;
-  --dark-shadow: rgb(22, 43, 56);
-  --light-shadow: rgb(62, 83, 96);
+  --dark-shadow: rgb(137, 36, 62);
+  --light-shadow: rgb(177, 76, 102);
 }
 
 /* Toute les balises */
@@ -122,6 +122,10 @@ main {
   overflow: auto;
   color: black;
 }
+.message-dark {
+  background-color: #313131;
+  color: var(--light-text);
+}
 
 .tweet-actions {
   display: flex;
@@ -133,7 +137,6 @@ main {
 }
 
 .icones {
-
   height: 1.5rem;
   display: flex;
   justify-content: space-around;
@@ -261,7 +264,7 @@ header {
 
 header h1 {
   color: var(--light-text);
-  font-size: 2rem;
+  font-size: 5vh;
   align-self: center;
 }
 
@@ -270,6 +273,7 @@ header .logo {
   margin-right: 1.25rem;
   padding: 10px;
   cursor: pointer;
+  height: 100%;
 }
 
 nav {
@@ -534,7 +538,6 @@ nav,
 }
 
 @media screen and (min-width: 600px) {
-
   /* Header deskop */
   nav {
     position: fixed;
@@ -604,7 +607,7 @@ nav,
     position: fixed;
     right: 0;
     top: 50%;
-    width: 10vw;
+    width: 12vw;
     height: 70vh;
     transform: translate(0, -40%);
     margin-right: 1rem;
@@ -632,6 +635,11 @@ nav,
     color: var(--primary-color);
   }
 
+  .trend div {
+    width: 100%;
+    text-align: center;
+  }
+
   nav a:hover,
   nav div:hover {
     border-radius: 0;
@@ -649,4 +657,3 @@ nav,
     font-size: 1.5vw;
   }
 }
-

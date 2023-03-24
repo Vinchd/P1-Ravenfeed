@@ -19,22 +19,21 @@ const persons = [
       "https://storage.googleapis.com/quest_editor_uploads/r6XufUn3Fyc24ROrehmyRkl4wmTNaaYR.png",
     message:
       "Vous avez vu ?! Avec mon navigateur Arc je peux faire des copier/coller ! 🤯 #JSWizards",
-
   },
   {
     name: "Alexis",
     picture: "https://github.com/AlexisChesneau.png?size=300",
-    message: "Le gras c'est la vie !",
+    message: "Ce matin j'ai mangé un yaourt",
   },
   {
     name: "Badis",
     picture: "https://github.com/badis69.png?size=300",
-    message: "On va manger des chips ! T'entends ? Des chips !",
+    message: "J'ai acheté le nouveau Thermomix pour faire des crêpes",
   },
   {
     name: "Chloé",
     picture: "https://www.gravatar.com/avatar/54738?d=identicon&s=300",
-    message: "Hier j'ai mangé une pomme !",
+    message: "J'ai encore renversé de l'eau sur mon Mac...",
   },
   {
     name: "Denis",
@@ -45,7 +44,7 @@ const persons = [
     name: "Enzo",
     picture:
       "https://storage.googleapis.com/quest_editor_uploads/YSKI7qaSLm9lP0dod16OelpMs9WH5iRo.jpeg",
-    message: "J'ai une nouvelle casquette 😍",
+    message: "Bonjour à toutes zéé à tous",
   },
   {
     name: "Hafsa",
@@ -97,12 +96,13 @@ const persons = [
     name: "Sébastien",
     picture:
       "https://storage.googleapis.com/quest_editor_uploads/eyHJwkIpfxXI7InahjmSfmMFfT9mlcGn.png",
-    message: "Euh ? Non rien... #Inutile",
+    message:
+      "Je devrais peut etre acheter un 6ème pc, au cas ou les 5 premiers tombent en panne... #Inutile",
   },
   {
     name: "Thibaut",
     picture: "https://github.com/neolink78.png?size=300",
-    message: "Je vais m'entrainer à la salle à 18h, qui veut venir ?",
+    message: "Je vais m'entrainer à la salle à 18h, qui veut venir ? #Workout",
   },
   {
     name: "Victor",
@@ -220,6 +220,9 @@ function createTweet(nameF, pictureF, newTweetContent) {
   // Contenu du Tweet
   const message = document.createElement("div");
   message.classList.add("message");
+  if (!dark.classList.contains("dark")) {
+    message.classList.add("message-dark");
+  }
   tweetBody.appendChild(message);
 
   const content = document.createElement("p");
@@ -309,6 +312,7 @@ function createTweet(nameF, pictureF, newTweetContent) {
     const popupStyle = !isDarkTheme ? "dark-tweet" : "";
     if (popupStyle) {
       document.querySelector(".popup-container").classList.add(popupStyle);
+      document.querySelector("#comment-message").classList.add("message-dark");
     }
 
     // Affichage du PopUp
@@ -339,19 +343,19 @@ hamburgerButton.addEventListener("click", function () {
 dark.addEventListener("click", function () {
   const toggle = document.querySelector("body");
   const changeP = document.querySelector(".dark-theme label");
-  const boxMessage = document.querySelectorAll(".message");
   const boxTweet = document.querySelectorAll(".tweet");
-  const popupContainer = document.querySelector(".popup-container");
+  const boxMessage = document.querySelectorAll(".message");
+  const trend = document.querySelectorAll(".trend a");
 
   toggle.classList.toggle("dark");
   dark.classList.toggle("dark");
   textarea.classList.toggle("dark");
   saySomething.classList.toggle("dark-tweet");
   newMessage.classList.toggle("dark-tweet");
-  const trend = document.querySelectorAll(".trend a");
 
   for (let i = 0; i < boxTweet.length; i++) {
     boxTweet[i].classList.toggle("dark-tweet");
+    boxMessage[i].classList.toggle("message-dark");
   }
 
   for (let i of trend) {
@@ -519,13 +523,20 @@ function getHashtag() {
 
   // let indiceTrend;
 
-  tableauObjHashtag.length >= 3 ? indiceTrend = 3 : indiceTrend = tableauObjHashtag.length;
+  tableauObjHashtag.length >= 3
+    ? (indiceTrend = 3)
+    : (indiceTrend = tableauObjHashtag.length);
 
+  let trendDark = "";
+  if (!dark.classList.contains("dark")) {
+    trendDark = ` style= "color : #f5f5f5"`;
+  } else {
+    trendDark = "";
+  }
   for (let i = 0; i < indiceTrend; i++) {
-    trendHTML += `<div><a href="#">${tableauObjHashtag[i].name}</a> / ${tableauObjHashtag[i].quantity}</div>`;
+    trendHTML += `<div ${trendDark}><a href="#" ${trendDark}>${tableauObjHashtag[i].name}</a> / ${tableauObjHashtag[i].quantity}</div>`;
   }
 
   console.log(trendHTML);
-
   document.querySelector(".trend").innerHTML = trendHTML;
 }
